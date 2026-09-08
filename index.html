@@ -1312,6 +1312,185 @@ button {
     margin-top: 20px;
 }
 
+/* ==========================
+   BROWSER
+========================== */
+
+.browser-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.browser-container h2 {
+    font-size: 36px;
+    color: #c084fc;
+    margin-bottom: 10px;
+    text-shadow: 0 0 20px #a855f744;
+}
+
+.browser-container > p {
+    color: #b8c4d6;
+}
+
+.browser-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed18,
+            #2563eb15
+        );
+
+    border: 1px solid #3b82f655;
+    backdrop-filter: blur(15px);
+}
+
+.browser-btn {
+    width: 43px;
+    height: 43px;
+    font-size: 18px;
+    color: white;
+    background: #241039;
+    border: 1px solid #6d28d9;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.browser-btn:hover {
+    background: #5b21b6;
+}
+
+.browser-home {
+    background: #7c3aed;
+}
+
+.browser-url {
+    flex: 1;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    background: #0d0615;
+    border: 1px solid #6d28d9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.browser-url span {
+    padding: 0 10px;
+}
+
+#browserAddress {
+    flex: 1;
+    height: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+#browserAddress::placeholder {
+    color: #79698a;
+}
+
+.browser-go {
+    width: 60px;
+    height: 43px;
+    border: 0;
+    border-radius: 0;
+    background: #7c3aed;
+    color: white;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.browser-go:hover {
+    background: #5b21b6;
+}
+
+.browser-welcome {
+    margin-top: 25px;
+    padding: 40px 20px;
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #7c3aed18,
+            #2563eb15
+        );
+
+    border: 1px solid #3b82f655;
+    backdrop-filter: blur(15px);
+}
+
+.browser-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.browser-description {
+    color: #b09cbd;
+    line-height: 1.6;
+}
+
+.browser-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.browser-quick {
+    padding: 13px 18px;
+    color: white;
+    background: #241039;
+    border: 1px solid #6d28d9;
+    border-radius: 12px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.browser-quick:hover {
+    background: #5b21b6;
+}
+
+.browser-info {
+    margin-top: 20px;
+    padding: 15px;
+    color: #9d8aa9;
+    background: rgba(255,255,255,.04);
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+.browser-back {
+    margin-top: 20px;
+}
+
+@media(max-width:650px) {
+
+    .browser-controls {
+        flex-wrap: wrap;
+    }
+
+    .browser-url {
+        flex-basis: 100%;
+        order: 2;
+    }
+
+}
+
 /* MOBILE */
 
 @media(max-width:600px) {
@@ -1409,6 +1588,10 @@ button {
 
         <button class="nav-btn" onclick="showPage('games')">
             Games
+        </button>
+
+        <button class="nav-btn" onclick="showPage('browserPage')">
+            Browser
         </button>
 
         <button class="nav-btn" onclick="showPage('about')">
@@ -1555,6 +1738,104 @@ button {
             There will always be something
             new to create and improve.
         </p>
+
+    </div>
+
+</section>
+
+<section id="browserPage" class="page">
+
+    <div class="browser-container">
+
+        <h2>🌐 Nexora Browser</h2>
+
+        <p>Enter a website or search term below.</p>
+
+        <div class="browser-controls">
+
+            <button class="browser-btn" onclick="browserBack()">←</button>
+
+            <button class="browser-btn" onclick="browserForward()">→</button>
+
+            <button class="browser-btn" onclick="browserReload()">↻</button>
+
+            <button class="browser-btn browser-home" onclick="browserHome()">⌂</button>
+
+            <div class="browser-url">
+
+                <span>🔎</span>
+
+                <input
+                    id="browserAddress"
+                    type="text"
+                    placeholder="Enter a website or search..."
+                >
+
+                <button class="browser-go" onclick="openWebsite()">Go</button>
+
+            </div>
+
+        </div>
+
+        <div class="browser-welcome">
+
+            <div class="browser-icon">🌌</div>
+
+            <p class="browser-description">
+                Quick links
+            </p>
+
+            <div class="browser-links">
+
+                <a
+                    class="browser-quick"
+                    href="https://www.google.com"
+                    target="_blank">
+                    🔎 Google
+                </a>
+
+                <a
+                    class="browser-quick"
+                    href="https://www.youtube.com"
+                    target="_blank">
+                    ▶️ YouTube
+                </a>
+
+                <a
+                    class="browser-quick"
+                    href="https://github.com"
+                    target="_blank">
+                    💻 GitHub
+                </a>
+
+                <a
+                    class="browser-quick"
+                    href="https://www.wikipedia.org"
+                    target="_blank">
+                    📚 Wikipedia
+                </a>
+
+                <a
+                    class="browser-quick"
+                    href="https://discord.gg/Tfr2d3ABBN"
+                    target="_blank">
+                    💬 Nexora Discord
+                </a>
+
+            </div>
+
+            <div class="browser-info">
+                ℹ️ Nexora opens websites in a new browser tab.
+            </div>
+
+        </div>
+
+        <button
+            class="action browser-back"
+            onclick="showPage('games')"
+        >
+            Back
+        </button>
 
     </div>
 
@@ -2458,6 +2739,79 @@ function initHelltaker() {
     }
 
     init();
+
+}
+
+
+/* ==========================
+   BROWSER
+========================== */
+
+const browserAddress =
+    document.getElementById("browserAddress");
+
+browserAddress.addEventListener("keydown", function(event) {
+
+    if (event.key === "Enter") {
+
+        openWebsite();
+
+    }
+
+});
+
+function openWebsite() {
+
+    let input = browserAddress.value.trim();
+
+    if (!input) return;
+
+    let url;
+
+    if (
+        input.startsWith("https://") ||
+        input.startsWith("http://")
+    ) {
+        url = input;
+    }
+
+    else if (
+        input.includes(".") &&
+        !input.includes(" ")
+    ) {
+        url = "https://" + input;
+    }
+
+    else {
+        url =
+            "https://www.google.com/search?q=" +
+            encodeURIComponent(input);
+    }
+
+    window.open(url, "_blank");
+}
+
+function browserHome() {
+
+    browserAddress.value = "";
+
+}
+
+function browserBack() {
+
+    history.back();
+
+}
+
+function browserForward() {
+
+    history.forward();
+
+}
+
+function browserReload() {
+
+    location.reload();
 
 }
 
